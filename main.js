@@ -44,7 +44,7 @@ function rollDice(activePlayer) {
     let dice = Math.floor(Math.random()*6 + 1);
     roundScore = roundScore  + dice;
     document.querySelector("img").style.display = "block";
-    document.querySelector("img").src = `/images/dice${dice}.png`
+    document.querySelector("img").src = `dice${dice}.png`
     // if dice is 1 then switch players
     if (dice !== 1 ){
         document.querySelector(`#current-${activePlayer}`).textContent = roundScore;
