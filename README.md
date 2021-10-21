@@ -1,0 +1,2 @@
+# diceGame
+first js project
