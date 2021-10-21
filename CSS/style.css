@@ -1,0 +1,230 @@
+/* Basics */
+:root {
+  --color-primary: #2584ff;
+  --color-secondary: #00d9ff;
+  --color-accent: #ff3400;
+  --color-headings: #1b0760;
+  --color-body: #918ca4;
+  --color-body-darker: #5c5577;
+  --color-border: #ccc;
+  --border-radius: 30px;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  color: var(--color-body);
+}
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+/* Typography */
+h1,
+h2,
+h3 {
+  color: var(--color-headings);
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 7rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3rem;
+}
+p {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 8rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Dice game style */
+/* grid */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body {
+  background-image:linear-gradient(rgba(62,20,20,0.4), rgba(62, 20, 20, 0.4)) , url(/images/back.jpg);
+  /* background: linear-gradient(rgba(62,20,20,0.4), rgba(62, 20, 20, 0.4)); */
+  background-size: cover;
+  background-position: center;
+  font-family: Lato;
+  font-weight: 300;
+  position: relative;
+  height: 100vh;
+  color: #555;
+}
+
+/* .wrapper {
+  display: grid;
+  grid-template-columns: repeat(2 ,1fr);
+  justify-items: center;
+  text-align: center;
+  height: 100vh;
+} */
+.wrapper {
+  width: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* .player-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+} */
+.player-panel {
+  width: 50%;
+  float: left;
+  height: 600px;
+  padding: 100px;
+}
+
+/* players */
+/* 
+.player-name {
+  color: #000;
+  font-size: 7rem;
+  margin: 3rem 0;
+} */
+.player-name{
+  font-size: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 100;
+  margin: 20px 0 10px;
+  position: relative;
+}
+/* .active {
+  background: #ccc;
+} */
+.active {
+  background: #f7f7f7;
+}
+.active .player-name{
+  font-weight: 300;
+}
+/* .player-name::after {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%
+} */
+.active .player-name::after {
+  content: "\2022";
+  font-size: 4.7rem;
+  align-self: center;
+  color: #eb4d4d;
+}
+.player-score {
+  text-align: center;
+  font-size: 8rem;
+  font-weight: 100;
+  color: #eb4d4d;
+  margin-bottom: 130px;
+}
+.player-current-box {
+  background-color: #eb4d4d;
+  color: #fff;
+  width: 40%;
+  margin: 0 auto;
+  padding: 12px ;
+  text-align: center;
+}
+.player-current-label {
+  color: #222;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.player-current-score {
+  font-size: 3rem;
+}
+button {
+  outline: none;
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #555;
+  background: none;
+  border: none;
+  font-family: Lato;
+  font-size: 2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 300;
+  /* transition: background 0.3s; */
+}
+button:hover{
+  font-weight: 600;
+}
+.btn-new {
+  top: 45px;
+}
+.btn-roll {top: 403px;}
+.btn-hold {top: 467px;}
+/* .btn-container {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 400px;
+  height: 100vh;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 10rem;
+} */
+.dice {
+  display: none;
+  outline: none;
+  position: absolute;
+  left: 50%;
+  top: 178px;
+  transform: translateX(-50%);
+  height: 100px;
+  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+.winner .player-name {
+  background: #eb4d4d;
+  color: white;
+  font-weight: 300;
+  transform: scale(1.1);
+}
+
